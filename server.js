@@ -1,4 +1,6 @@
 const http = require("http");
+const fs = require('fs');
+const path = require('path');
 require('dotenv').config();
 const port = process.env.PORT || 8080;
 const host = process.env.HOST || "localhost";
@@ -17,7 +19,7 @@ http.createServer(function (req, res) {
         return;
     }
     res.writeHead(200, {
-        "Content-type": "text/html"
+        "Content-type": "text/html;charset=utf-8"
     });
     res.end(`<h1>Try: ${getRandom()}</h1>`);
 })
